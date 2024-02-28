@@ -1,0 +1,169 @@
+.puzzle-section {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    margin-bottom: 55px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.emojis-puzzle {
+    font-size: 3em;
+    margin-bottom: 60px;
+}
+
+
+.emojis-puzzle {
+    animation: shrink 1s ease-in-out both;
+}
+
+@keyframes shrink {
+    0% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+.input {
+    max-width: 190px;
+    background-color: #f5f5f5;
+    color: #242424;
+    padding: .15rem .5rem;
+    min-height: 40px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    line-height: 1.15;
+    box-shadow: 0px 10px 20px -18px;
+}
+
+input:focus {
+    border-bottom: 2px solid #5b5fc7;
+    border-radius: 4px 4px 2px 2px;
+}
+
+input:hover {
+    outline: 1px solid lightgrey;
+}
+
+
+/* Input & Send */
+.messageBox {
+    width: fit-content;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 0 15px;
+    border-radius: 10px;
+    border: 1px solid rgb(63, 63, 63);
+  }
+  .messageBox:focus-within {
+    border: 1px solid rgb(110, 110, 110);
+  }
+  .fileUploadWrapper {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  #file {
+    display: none;
+  }
+  .fileUploadWrapper label {
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .fileUploadWrapper label svg {
+    height: 18px;
+  }
+  .fileUploadWrapper label svg path {
+    transition: all 0.3s;
+  }
+  .fileUploadWrapper label svg circle {
+    transition: all 0.3s;
+  }
+  .fileUploadWrapper label:hover svg path {
+    stroke: #fff;
+  }
+  .fileUploadWrapper label:hover svg circle {
+    stroke: #fff;
+    fill: #3c3c3c;
+  }
+  .fileUploadWrapper label:hover .tooltip {
+    display: block;
+    opacity: 1;
+  }
+  .tooltip {
+    position: absolute;
+    top: -40px;
+    display: none;
+    opacity: 0;
+    color: white;
+    font-size: 10px;
+    text-wrap: nowrap;
+    background-color: #000;
+    padding: 6px 10px;
+    border: 1px solid #3c3c3c;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.596);
+    transition: all 0.3s;
+  }
+  #messageInput {
+    width: 200px;
+    height: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding-left: 10px;
+    color: rgb(0, 0, 0);
+  }
+  #messageInput:focus ~ #sendButton svg path,
+  #messageInput:valid ~ #sendButton svg path {
+    fill: #3c3c3c;
+    stroke: white;
+  }
+  
+  #sendButton {
+    width: fit-content;
+    height: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  #sendButton svg {
+    height: 18px;
+    transition: all 0.3s;
+  }
+  #sendButton svg path {
+    transition: all 0.3s;
+  }
+  #sendButton:hover svg path {
+    fill: #3c3c3c;
+    stroke: white;
+  }
