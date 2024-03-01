@@ -1,4 +1,6 @@
-import { Component} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, SimpleChanges} from '@angular/core';
+import { TestService } from '../utils/test.service';
+import { TriviaEmojisService } from '../utils/trivia-emojis.service';
 
 @Component({
   selector: 'app-puzzle',
@@ -8,12 +10,13 @@ import { Component} from '@angular/core';
   styleUrl: './puzzle.component.css'
 })
 export class PuzzleComponent  {
-  ngOnInit() {
-    this.example();
-  }
 
-  example() {
-    console.log("exampleee")
+  
+  constructor(private triviaEmojis: TriviaEmojisService) {}
+  randomNumber: string = "";
+
+  ngOnInit(): void {
+    this.randomNumber = this.triviaEmojis.getRandomTrivia();
   }
 
 }

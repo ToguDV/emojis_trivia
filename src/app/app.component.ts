@@ -11,4 +11,14 @@ import { PuzzleComponent } from './puzzle/puzzle.component';
 })
 export class AppComponent {
   title = 'emojis_trivia';
+  randomNumber = NaN;
+
+  constructor() {
+  }
+
+  ngOnInit(){
+    this.randomNumber = Math.random();
+  }
+  
+
 }
