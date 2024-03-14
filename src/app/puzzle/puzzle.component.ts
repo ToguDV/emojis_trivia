@@ -21,6 +21,7 @@ export class PuzzleComponent  {
   answer: string = ''
 
   ngOnInit(): void {
+    
     console.log(`
     
     ##############################

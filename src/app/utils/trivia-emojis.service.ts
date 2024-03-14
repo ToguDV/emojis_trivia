@@ -11,20 +11,18 @@ export class TriviaEmojisService {
 
   async getRandomTrivia() {
 
-    let datito1;
-    let datazo = ["", ""];
+    let result = ["", ""];
     try {
       const response = await fetch('https://localhost:7037/api/Trivia');
       const data = await response.json();
-      datito1 = data;
-      console.log(datito1[0].emojis);
-      datazo = [datito1[0].emojis, ""];
+      const random = Math.floor(Math.random() * data.length);
+      result = [data[random].emojis, data[random].title];
     } catch (error) {
       console.error('Error fetching data:', error);
-      datazo = ["error", "error"];
+      result = ["error", "error"];
     }
 
-    return datazo;
+    return result;
   }
 
   getAnswer(id: string) {
