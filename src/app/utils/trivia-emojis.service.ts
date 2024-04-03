@@ -13,7 +13,7 @@ export class TriviaEmojisService {
 
     let result = ["", ""];
     try {
-      const response = await fetch('https://localhost:7037/api/Trivia');
+      const response = await fetch('http://158.69.122.84:25568/api/Trivia');
       const data = await response.json();
       const random = Math.floor(Math.random() * data.length);
       result = [data[random].emojis, data[random].title];
