@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Console } from 'console';
-import { json } from 'stream/consumers';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TriviaEmojisService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   async getRandomTrivia() {
 
@@ -27,5 +26,10 @@ export class TriviaEmojisService {
 
   getAnswer(id: string) {
     return id;
+  }
+
+
+  getData() {
+    return this.http.get('http://158.69.122.84:25568/api/Trivia');
   }
 }

@@ -2,6 +2,7 @@ import { Component} from '@angular/core';
 import { TriviaEmojisService } from '../utils/trivia-emojis.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-puzzle',
@@ -19,6 +20,7 @@ export class PuzzleComponent  {
   isAnswered: boolean = false;
   input: string = "";
   answer: string = ''
+  data: any;
 
   ngOnInit(): void {
     
@@ -40,6 +42,7 @@ export class PuzzleComponent  {
  
     
     `);
+
     this.onReload();
     
   }
@@ -54,8 +57,12 @@ export class PuzzleComponent  {
   }
 
   async onReload() : Promise<void> {
-    this.trivia = await this.triviaEmojis.getRandomTrivia();
-    this.emojis = this.trivia[0];
+    this.triviaEmojis.getData().subscribe(data => {
+      this.data = data;
+      const random = Math.floor(Math.random() * this.data.length);
+      this.trivia = [this.data[random].emojis, this.data[random].title];
+      this.emojis = this.trivia[0];
+    });
     this.isAnswered = false;
     this.input = "";
   }
