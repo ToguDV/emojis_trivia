@@ -230,3 +230,18 @@ input:hover {
     transform: translate(3px, 3px);
     box-shadow: 0px 0px var(--main-color);
   }
+  
+  @media (hover: none) {
+    .reload:hover {
+      background: var(--bg-color);
+    }
+  
+    .reload:hover .button__text {
+      color: var(--font-color);
+    }
+  
+    .reload:hover .button__icon {
+      width: 39px;
+      transform: translateX(109px);
+    }
+  }
