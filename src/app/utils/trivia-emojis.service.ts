@@ -9,6 +9,6 @@ export class TriviaEmojisService {
   constructor(private http: HttpClient) { }
 
   getData() {
-    return this.http.get('http://158.69.122.84:25568/api/Trivia');
+    return this.http.get('https://emojisapi.caprover.togudv.com/api/Trivia');
   }
 }

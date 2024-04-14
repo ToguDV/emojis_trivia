@@ -19,7 +19,7 @@ h1 {
 
 
 .emojis-puzzle{
-    animation: shrink 1s ease-in-out both;
+    animation: shrink 2s ease-in-out both;
 }
 
 @keyframes shrink {

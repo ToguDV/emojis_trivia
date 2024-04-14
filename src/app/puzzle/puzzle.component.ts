@@ -79,10 +79,11 @@ export class PuzzleComponent  {
       this.trivia = [this.data[random].emojis, this.data[random].title, this.data[random].description];
       this.emojis = this.trivia[0];
       this.description = this.trivia[2];
+      this.isAnswered = false;
+      this.input = "";
+      this.fadeInOut();
     });
-    this.isAnswered = false;
-    this.input = "";
-    this.fadeInOut();
+    
   }
 
 
